@@ -57,7 +57,7 @@ resource "aws_eks_cluster" "eks_cluster" {
   ]
 }
 
-resource "aws_s3_bucket" "example" {
+resource "aws_s3_bucket" "my_s3_bucket" {
   bucket = "terraform-state-files"
   acl    = "private"
 
