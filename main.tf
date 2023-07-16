@@ -1,10 +1,10 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "us-east-1"  #your region
 }
 
 resource "aws_instance" "ec2_instance" {
   ami           = "ami-0c94855ba95c71c99"
-  instance_type = "t2.micro"
+  instance_type = "t2.micro"   #free tier eligible
   tags = {
     Name = "main-instance"
   }
@@ -48,7 +48,7 @@ resource "aws_eks_cluster" "eks_cluster" {
   role_arn = aws_iam_role.eks_iam_role.arn
 
   vpc_config {
-    subnet_ids = [var.subnet_id_1, var.subnet_id_2]
+    subnet_ids = [var.subnet_id_1, var.subnet_id_2]  #referencing the subnet from the variables files
   }
 
   depends_on = [
