@@ -1,10 +1,10 @@
 provider "aws" {
-  region = "us-east-1"  #your region
+  region = "us-east-1"  
 }
 
 resource "aws_instance" "ec2_instance" {
   ami           = "ami-0c94855ba95c71c99"
-  instance_type = "t2.micro"   #free tier eligible
+  instance_type = "t2.micro"   
   tags = {
     Name = "main-instance"
   }
@@ -62,7 +62,7 @@ resource "aws_s3_bucket" "my_s3_bucket" {
   acl    = "private"
 
   versioning {
-    enabled = true
+    enabled = true  #useful to adjust version changes
   }
 
   tags = {
