@@ -62,7 +62,7 @@ resource "aws_s3_bucket" "my_s3_bucket" {
   acl    = "private"
 
   versioning {
-    enabled = true  #useful to adjust version changes
+    enabled = true  
   }
 
   tags = {
